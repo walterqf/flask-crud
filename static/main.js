@@ -73,8 +73,8 @@ function renderUser(users) {
     userItem.innerHTML = `<header class='d-flex justify-content-between align-items-center'>
     <h3>${user.username}</h3>
     <div>
-    <button class='btn-edit btn btn-secondary btn-sm'>Edit</button>
-    <button class='btn-delete btn btn-danger btn-sm'>Delete</button>
+    <button data-id=${user.id} class='btn-edit btn btn-secondary btn-sm'>Edit</button>
+    <button data-id=${user.id} class='btn-delete btn btn-danger btn-sm'>Delete</button>
     </div>
     </header>
     <p>${user.email}</p>
@@ -112,10 +112,10 @@ function renderUser(users) {
       //userForm['password'].value = data.password
       userForm["email"].value = data.email;
       editing = true;
-      userId = data.id;
+      userId = user.id;
     });
 
     //console.log(btnEdit);
-    userList.append(userItem);
+    userList.appendChild(userItem);
   });
 }
