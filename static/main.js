@@ -4,7 +4,7 @@ let editing = false;
 let userId = null;
 window.addEventListener("DOMContentLoaded", async (e) => {
   //console.log("loaded");
-  const response = await fetch("api/users");
+  const response = await fetch("/api/users");
   const data = await response.json();
   users = data;
   renderUser(users);
