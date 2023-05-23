@@ -22,6 +22,7 @@ userForm.addEventListener("submit", async (e) => {
     const response = await fetch("/api/users", {
       method: "POST",
       headers: {
+        'Accept': 'application/json',
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -37,6 +38,7 @@ userForm.addEventListener("submit", async (e) => {
     const response = await fetch(`/api/users/${userId}`, {
       method: "PUT",
       headers: {
+        'Accept': 'application/json',
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
