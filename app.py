@@ -3,10 +3,12 @@ from psycopg2 import connect, extras
 from cryptography.fernet import Fernet
 from dotenv import load_dotenv
 from os import environ
+from flask_cors import CORS
 
 load_dotenv ()
 
 app = Flask(__name__)
+CORS(app)
 key = Fernet.generate_key()
 host = environ.get('DB_HOST')
 port = environ.get('DB_PORT')
