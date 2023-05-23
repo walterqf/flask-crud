@@ -21,8 +21,10 @@ userForm.addEventListener("submit", async (e) => {
   if (!editing) {
     const response = await fetch("/api/users", {
       method: "POST",
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache",
       headers: {
-        'Accept': 'application/json',
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -37,8 +39,10 @@ userForm.addEventListener("submit", async (e) => {
     //console.log('updating')
     const response = await fetch(`/api/users/${userId}`, {
       method: "PUT",
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache",
       headers: {
-        'Accept': 'application/json',
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
