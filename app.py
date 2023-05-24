@@ -37,7 +37,7 @@ def home():
 def get_users():
     conn = get_connection()
     cur = conn.cursor(cursor_factory=extras.RealDictCursor)
-    cur.execute('SELECT * FROM users')
+    cur.execute('SELECT 2*2')
     users = cur.fetchall()
     cur.close()
     conn.close()
